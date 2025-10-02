@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Github, Linkedin, Mail, Twitter, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, Mail, Twitter, ArrowUp } from 'lucide-react';
 import { personalInfo, socialLinks } from '../data/portfolio';
 
 const Footer: React.FC = () => {
@@ -22,8 +22,6 @@ const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-gray-900 text-white relative">

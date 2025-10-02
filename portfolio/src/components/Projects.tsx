@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Github, Eye } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { projects } from '../data/portfolio';
 
 const Projects: React.FC = () => {
@@ -11,7 +11,6 @@ const Projects: React.FC = () => {
   });
 
   const [filter, setFilter] = useState<'all' | 'featured'>('all');
-  const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
   const filteredProjects = filter === 'all' ? projects : projects.filter(p => p.featured);
 
@@ -139,14 +138,6 @@ const Projects: React.FC = () => {
                           <Github size={20} />
                         </motion.a>
                       )}
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        onClick={() => setSelectedProject(project.id)}
-                        className="bg-white text-gray-900 p-3 rounded-full hover:bg-gray-100 transition-colors"
-                      >
-                        <Eye size={20} />
-                      </motion.button>
                     </div>
                   </div>
 
